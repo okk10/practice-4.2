@@ -1,0 +1,27 @@
+class Stack:
+    def __init__(self):
+        self._items = []
+    def is_empty(self):
+        return len(self._items) == 0
+    def push(self, item):
+        self._items.append(item)
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("pop из пустого стека")
+        return self._items.pop()
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("peek из пустого стека")
+        return self._items[-1]
+    def size(self):
+        return len(self._items)
+s = Stack()
+print(s.is_empty())
+print(s.push(1))
+print(s.push(2))
+print(s.push(3))
+print(s.size())
+print(s.peek())
+print(s.pop())
+print(s.pop())
+print(s.is_empty())
